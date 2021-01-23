@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getProgress } from "./progress/model";
+import { getProgress } from "../features/progress/model";
 import styles from "../styles/Progress.module.css";
 
 const getYearProgers = () => {
