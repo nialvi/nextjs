@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getProgressPercent } from "../features/progress/model";
+import ProgressBar from "../features/progress/view";
 import styles from "../styles/Progress.module.css";
 
 const getYearProgers = () => {
@@ -33,9 +34,7 @@ function Progress(props) {
 
   return (
     <div className={styles.container}>
-      <div>
-        <h1 className={styles.header}>{progress}%</h1>
-      </div>
+      <ProgressBar progress={progress} />
     </div>
   );
 }

@@ -1,0 +1,22 @@
+.header {
+  font-size: 6vh;
+}
+
+.wrapperProgressBar {
+  width: 60%;
+  text-align: center;
+}
+
+.wrapperBar {
+  height: 16px;
+  background-color: #e3e6e8;
+  border-radius: 16px;
+  position: relative;
+}
+
+.bar {
+  position: absolute;
+  height: 16px;
+  background-color: #5bcaff;
+  border-radius: 16px 0 0 16px;
+}
