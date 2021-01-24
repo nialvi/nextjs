@@ -1,10 +1,11 @@
-export function getProgress(
-  startMs: number,
-  endMs: number,
-  nowMs: number
-): number {
-  const percent = ((nowMs / (endMs - startMs)) * 100) / 1000;
-  const NUMBER_ROUND = 100_000_000;
+interface IParams {
+  full: number;
+  now: number;
+  fractionDigits: number;
+}
 
-  return Math.floor(percent * NUMBER_ROUND) / NUMBER_ROUND;
+export function getProgressPercent({ full, now, fractionDigits = 5 }): number {
+  const percent = (now / full) * 100;
+
+  return Number(percent.toFixed(fractionDigits));
 }

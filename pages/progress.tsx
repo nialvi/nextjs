@@ -1,17 +1,20 @@
 import { useState, useEffect } from "react";
-import { getProgress } from "../features/progress/model";
+import { getProgressPercent } from "../features/progress/model";
 import styles from "../styles/Progress.module.css";
 
 const getYearProgers = () => {
   const startYearMs = new Date(
-    `${new Date().getFullYear()}-01-01T00:00:00`
+    `${new Date().getFullYear()}-01-01T00:00:01`
   ).getTime();
   const endYearMs = new Date(
     `${new Date().getFullYear()}-12-31T23:59:59`
   ).getTime();
   const nowMs = new Date().getTime();
 
-  return getProgress(startYearMs, endYearMs, nowMs);
+  return getProgressPercent({
+    now: nowMs - startYearMs,
+    full: endYearMs - startYearMs,
+  });
 };
 
 function Progress(props) {
